@@ -1,4 +1,5 @@
-﻿using Banking.Domain.Models;
+﻿using Banking.Data.Configurations;
+using Banking.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Banking.Data.Context
@@ -11,5 +12,12 @@ namespace Banking.Data.Context
         }
 
         public DbSet<Account> Accounts { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new AccountConfiguration());
+        }
     }
 }
