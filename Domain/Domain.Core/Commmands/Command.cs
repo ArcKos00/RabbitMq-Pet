@@ -1,6 +1,6 @@
 ﻿using Domain.Core.Events;
 
-namespace Domain.Core.Commmands
+namespace Domain.Core.Commands
 {
     public abstract class Command : Message
     {

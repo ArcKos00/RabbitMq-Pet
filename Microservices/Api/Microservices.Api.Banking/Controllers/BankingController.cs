@@ -1,4 +1,5 @@
 ﻿using Banking.Application.Interfaces;
+using Banking.Application.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Microservices.Api.Banking.Controllers
@@ -19,6 +20,13 @@ namespace Microservices.Api.Banking.Controllers
         public async Task<IActionResult> GetAccounts()
         {
             return Ok(_service.GetAccounts());
+        }
+
+        [HttpPost("post")]
+        public IActionResult Post([FromBody] AccountTransfer accountTransfer)
+        {
+            _service.Transfer(accountTransfer);
+            return Ok(accountTransfer);
         }
     }
 }

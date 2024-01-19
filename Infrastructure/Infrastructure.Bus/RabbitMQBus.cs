@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Threading.Channels;
 using Domain.Core.Bus;
-using Domain.Core.Commmands;
+using Domain.Core.Commands;
 using Domain.Core.Events;
 using MediatR;
 using Newtonsoft.Json;

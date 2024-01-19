@@ -1,4 +1,4 @@
-﻿using Domain.Core.Commmands;
+﻿using Domain.Core.Commands;
 using Domain.Core.Events;
 
 namespace Domain.Core.Bus

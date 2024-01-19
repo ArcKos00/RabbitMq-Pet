@@ -1,5 +1,8 @@
-﻿using Domain.Core.Bus;
+﻿using Banking.Domain.CommandHandlers;
+using Banking.Domain.Commands;
+using Domain.Core.Bus;
 using Infrastructure.Bus;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.Ioc
@@ -9,6 +12,8 @@ namespace Infrastructure.Ioc
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             services.AddTransient<IEventBus, RabbitMQBus>();
+
+            services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
 
             return services;
         }
